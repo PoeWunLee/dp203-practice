@@ -1,0 +1,9 @@
+{
+	"name": "adfforexampoe",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c351af82-97d7-439d-a10e-6abdbe88d93e",
+		"tenantId": "a4e57936-b2b5-424b-afe1-d4d30b6e6481"
+	}
+}
