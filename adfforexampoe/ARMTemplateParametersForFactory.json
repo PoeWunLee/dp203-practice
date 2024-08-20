@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfforexampoe"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"dataforexampoe_connectionString": {
+			"value": ""
+		},
+		"datalake37847298437_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "appserver00000.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "appserverdb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "serveradmin"
+		},
+		"datalake37847298437_properties_typeProperties_url": {
+			"value": "https://datalake37847298437.dfs.core.windows.net/"
+		}
+	}
+}
