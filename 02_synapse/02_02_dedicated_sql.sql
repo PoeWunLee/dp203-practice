@@ -64,3 +64,16 @@ select * from PoolActivityLog;
 --[PIPELINES]--
 DELETE from PoolActivityLog;
 --see integrate tab
+
+
+CREATE TABLE dimProduct(
+    ProductSK int IDENTITY(1,1) NOT NULL, --SURROGATE KEY: start from number 1, increment of 1
+    ProductID int NOT NULL, --BUSINESS KEY
+    ProductNum varchar(100) NOT NULL,
+    Color varchar(20) NOT NULL,
+    ProductCategoryID int NOT NULL,
+    ProductCategoryName varchar(200) NOT NULL
+)
+WITH(
+    DISTRIBUTION=REPLICATE
+)
