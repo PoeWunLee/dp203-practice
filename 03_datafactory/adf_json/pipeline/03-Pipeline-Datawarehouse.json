@@ -1,0 +1,68 @@
+{
+	"name": "03-Pipeline-Datawarehouse",
+	"properties": {
+		"activities": [
+			{
+				"name": "01-Dataflow-Datawarehouse",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "ClearTables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "01_Dataflow_Warehouse",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "datalake37847298437",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "staging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			},
+			{
+				"name": "ClearTables",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[ClearTables]"
+				},
+				"linkedServiceName": {
+					"referenceName": "dataforexampoe",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-08-20T10:12:20Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
