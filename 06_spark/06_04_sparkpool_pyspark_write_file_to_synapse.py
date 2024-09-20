@@ -51,9 +51,9 @@ from com.microsoft.spark.sqlanalytics.Constants import Constants
 df.write \
     .option(Constants.SERVER,"dataworkspace2000939.sql.azuresynapse.net") \
     .option(Constants.USER,"sqladminuser") \
-    .option(Constants.PASSWORD,"sqlpassword@123") \
+    #.option(Constants.PASSWORD,"") \ commenting to avoid git push error on secrets
     .option(Constants.DATA_SOURCE,"pooldb") \
     .option(Constants.TEMP_FOLDER,"abfss://staging@datalake244434.dfs.core.windows.net") \
-    .option(Constants.STAGING_STORAGE_ACCOUNT_KEY,"dilbGv2rof6G4emB0qWgVwAOOexu/bIpvJiUnfal7+klHqCsKLB+JkQzMfRlgu0fm14iUFNHXPeU+AStZZXK2w==") \
+   # .option(Constants.STAGING_STORAGE_ACCOUNT_KEY,"") \ commenting to avoid git push error on secrets
     .mode("overwrite") \
     .synapsesql("pooldb.dbo.logdata") 
