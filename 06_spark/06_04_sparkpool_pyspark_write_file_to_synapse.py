@@ -49,8 +49,8 @@ import com.microsoft.spark.sqlanalytics
 from com.microsoft.spark.sqlanalytics.Constants import Constants
  
 df.write \
-    .option(Constants.SERVER,"dataworkspace2000939.sql.azuresynapse.net") \
-    .option(Constants.USER,"sqladminuser") \
+    .option(Constants.SERVER,"") \
+    .option(Constants.USER,"") \
     #.option(Constants.PASSWORD,"") \ commenting to avoid git push error on secrets
     .option(Constants.DATA_SOURCE,"pooldb") \
     .option(Constants.TEMP_FOLDER,"abfss://staging@datalake244434.dfs.core.windows.net") \
